@@ -9,7 +9,7 @@ from collections import defaultdict
 from playwright.async_api import async_playwright
 from playwright_stealth import stealth_async
 
-WEBHOOK_URL = os.getenv("WEBHOOK_URL", "СЮДА_ВСТАВЬ_URL_ВЕБХУКА")
+WEBHOOK_URL = os.getenv("GOOGLE_WEBHOOK_URL")
 USER_EMAIL = os.getenv("USER_EMAIL", "твой_email")
 USER_PASSWORD = os.getenv("USER_PASSWORD", "твой_пароль")
 LOGIN_URL = "https://admin.100points.ru/login"
