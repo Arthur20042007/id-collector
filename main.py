@@ -8,6 +8,8 @@ import urllib.parse
 from collections import defaultdict
 from playwright.async_api import async_playwright
 from playwright_stealth import stealth_async
+import os
+os.system("playwright install chromium")
 
 # ==========================================
 # КОНФИГУРАЦИЯ
@@ -132,7 +134,7 @@ async def run_collector():
     # 3. Запускаем браузер
     async with async_playwright() as p:
         print(">>> Запускаю браузер...")
-        browser = await p.chromium.launch(headless=False) # Можно поставить True
+        browser = await p.chromium.launch(headless=True, args=["--no-sandbox"])
         context = await browser.new_context()
         page = await context.new_page()
         await stealth_async(page)
